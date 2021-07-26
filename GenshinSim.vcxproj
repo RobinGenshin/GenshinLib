@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0438470f-f40c-4012-aeac-50d949227801}</ProjectGuid>
+    <RootNamespace>GenshinSim</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediate\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediate\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediate\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\intermediate\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ENFORCE_MATCHING_ALLOCATORS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\dev\simLib\GenshinSim\GenshinSim\include\weapons;D:\dev\simLib\GenshinSim\GenshinSim\include\weapons\swords;D:\dev\simLib\GenshinSim\GenshinSim\include\gauges;D:\dev\simLib\GenshinSim\GenshinSim\include\enums;D:\dev\simLib\GenshinSim\GenshinSim\include\features;D:\dev\simLib\GenshinSim\GenshinSim\include\stat_components;D:\dev\simLib\GenshinSim\GenshinSim\include\events;D:\dev\simLib\GenshinSim\GenshinSim\include\characters;D:\dev\simLib\GenshinSim\GenshinSim\include;D:\dev\simLib\GenshinSim\GenshinSim;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ENFORCE_MATCHING_ALLOCATORS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\dev\simLib\GenshinSim\GenshinSim\include\weapons;D:\dev\simLib\GenshinSim\GenshinSim\include\weapons\swords;D:\dev\simLib\GenshinSim\GenshinSim\include\gauges;D:\dev\simLib\GenshinSim\GenshinSim\include\enums;D:\dev\simLib\GenshinSim\GenshinSim\include\features;D:\dev\simLib\GenshinSim\GenshinSim\include\stat_components;D:\dev\simLib\GenshinSim\GenshinSim\include\events;D:\dev\simLib\GenshinSim\GenshinSim\include\characters;D:\dev\simLib\GenshinSim\GenshinSim\include;D:\dev\simLib\GenshinSim\GenshinSim;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ENFORCE_MATCHING_ALLOCATORS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\dev\simLib\GenshinSim\GenshinSim\include\weapons;D:\dev\simLib\GenshinSim\GenshinSim\include\weapons\swords;D:\dev\simLib\GenshinSim\GenshinSim\include\gauges;D:\dev\simLib\GenshinSim\GenshinSim\include\enums;D:\dev\simLib\GenshinSim\GenshinSim\include\features;D:\dev\simLib\GenshinSim\GenshinSim\include\stat_components;D:\dev\simLib\GenshinSim\GenshinSim\include\events;D:\dev\simLib\GenshinSim\GenshinSim\include\characters;D:\dev\simLib\GenshinSim\GenshinSim\include;D:\dev\simLib\GenshinSim\GenshinSim;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ENFORCE_MATCHING_ALLOCATORS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\dev\simLib\GenshinSim\GenshinSim\include\weapons;D:\dev\simLib\GenshinSim\GenshinSim\include\weapons\swords;D:\dev\simLib\GenshinSim\GenshinSim\include\gauges;D:\dev\simLib\GenshinSim\GenshinSim\include\enums;D:\dev\simLib\GenshinSim\GenshinSim\include\features;D:\dev\simLib\GenshinSim\GenshinSim\include\stat_components;D:\dev\simLib\GenshinSim\GenshinSim\include\events;D:\dev\simLib\GenshinSim\GenshinSim\include\characters;D:\dev\simLib\GenshinSim\GenshinSim\include;D:\dev\simLib\GenshinSim\GenshinSim;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="GenshinSim.cpp" />
+    <ClCompile Include="src\artifact.cpp" />
+    <ClCompile Include="src\characters\amber.cpp" />
+    <ClCompile Include="src\damage_calculation.cpp" />
+    <ClCompile Include="src\events\linear_refine_damage_event.cpp" />
+    <ClCompile Include="src\features\feature_stat_container.cpp" />
+    <ClCompile Include="src\features\on_hit_decorator.cpp" />
+    <ClCompile Include="src\gauges\elemental_gauges.cpp" />
+    <ClCompile Include="src\enemy.cpp" />
+    <ClCompile Include="src\enums\enum_maps.cpp" />
+    <ClCompile Include="src\events\transformative_reaction_event.cpp" />
+    <ClCompile Include="src\features\abstract_feature.cpp" />
+    <ClCompile Include="src\features\stat_modifier_decorator.cpp" />
+    <ClCompile Include="src\features\dynamic_feature.cpp" />
+    <ClCompile Include="src\features\temporary_decorator.cpp" />
+    <ClCompile Include="src\gauges\frozen_gauge.cpp" />
+    <ClCompile Include="src\gauges\gauge_vector.cpp" />
+    <ClCompile Include="src\monster.cpp" />
+    <ClCompile Include="src\stat_components\artifact_substat_stat_component.cpp" />
+    <ClCompile Include="src\attenuation.cpp" />
+    <ClCompile Include="src\stat_components\character_ascension_stat_component.cpp" />
+    <ClCompile Include="src\character.cpp" />
+    <ClCompile Include="src\character_dict.cpp" />
+    <ClCompile Include="src\stat_components\character_stat_growths.cpp" />
+    <ClCompile Include="src\characters\albedo.cpp" />
+    <ClCompile Include="src\combo_list.cpp" />
+    <ClCompile Include="src\component.cpp" />
+    <ClCompile Include="src\events\damage_data.cpp" />
+    <ClCompile Include="src\events\charged_talent_event.cpp" />
+    <ClCompile Include="src\events\normal_talent_event.cpp" />
+    <ClCompile Include="src\events\burst_talent_event.cpp" />
+    <ClCompile Include="src\events\damage_event.cpp" />
+    <ClCompile Include="src\events\abstract_event.cpp" />
+    <ClCompile Include="src\events\skill_talent_event.cpp" />
+    <ClCompile Include="src\features\static_feature.cpp" />
+    <ClCompile Include="src\player.cpp" />
+    <ClCompile Include="src\read_data.cpp" />
+    <ClCompile Include="src\events\particle_event.cpp" />
+    <ClCompile Include="src\stat_components\character_base_stat_component.cpp" />
+    <ClCompile Include="src\sim.cpp" />
+    <ClCompile Include="src\stat_components\linear_refine_stat_modifier.cpp" />
+    <ClCompile Include="src\stat_components\stat_component.cpp" />
+    <ClCompile Include="src\stat_components\stat_modifier.cpp" />
+    <ClCompile Include="src\events\talent_event.cpp" />
+    <ClCompile Include="src\talent_scaling.cpp" />
+    <ClCompile Include="src\team.cpp" />
+    <ClCompile Include="src\weapon.cpp" />
+    <ClCompile Include="src\stat_components\weapon_base_atk_stat_component.cpp" />
+    <ClCompile Include="src\stat_components\weapon_secondary_stat_component.cpp" />
+    <ClCompile Include="src\weapons\swords\freedom_sworn.cpp" />
+    <ClCompile Include="src\weapons\swords\mistsplitter.cpp" />
+    <ClCompile Include="src\weapons\swords\skyward_blade.cpp" />
+    <ClCompile Include="src\weapons\weapon_dict.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\artifact.h" />
+    <ClInclude Include="include\attenuation.h" />
+    <ClInclude Include="include\characters\amber.h" />
+    <ClInclude Include="include\characters\barbara.h" />
+    <ClInclude Include="include\damage_calculation.h" />
+    <ClInclude Include="include\events\linear_refine_damage_event.h" />
+    <ClInclude Include="include\features\feature_stat_container.h" />
+    <ClInclude Include="include\features\on_hit_decorator.h" />
+    <ClInclude Include="include\gauges\elemental_gauges.h" />
+    <ClInclude Include="include\enemy.h" />
+    <ClInclude Include="include\enums\amplifying_reaction.h" />
+    <ClInclude Include="include\enums\attentuation_group.h" />
+    <ClInclude Include="include\enums\attenuation_tag.h" />
+    <ClInclude Include="include\enums\damage_scaling_stat.h" />
+    <ClInclude Include="include\enums\element.h" />
+    <ClInclude Include="include\enums\enum_maps.h" />
+    <ClInclude Include="include\enums\region.h" />
+    <ClInclude Include="include\enums\stat.h" />
+    <ClInclude Include="include\enums\talent.h" />
+    <ClInclude Include="include\enums\transformative_reaction.h" />
+    <ClInclude Include="include\enums\weapon_type.h" />
+    <ClInclude Include="include\events\particle_event.h" />
+    <ClInclude Include="include\events\transformative_reaction_event.h" />
+    <ClInclude Include="include\features\abstract_feature.h" />
+    <ClInclude Include="include\features\stat_modifier_decorator.h" />
+    <ClInclude Include="include\features\dynamic_feature.h" />
+    <ClInclude Include="include\features\feature_data.h" />
+    <ClInclude Include="include\features\temporary_decorator.h" />
+    <ClInclude Include="include\gauges\frozen_gauge.h" />
+    <ClInclude Include="include\gauges\gauge_vector.h" />
+    <ClInclude Include="include\monster.h" />
+    <ClInclude Include="include\stat_components\artifact_substat_stat_component.h" />
+    <ClInclude Include="include\stat_components\character_ascension_stat_component.h" />
+    <ClInclude Include="include\character.h" />
+    <ClInclude Include="include\character_dict.h" />
+    <ClInclude Include="include\stat_components\character_stat_growths.h" />
+    <ClInclude Include="include\characters\albedo.h" />
+    <ClInclude Include="include\events\damage_data.h" />
+    <ClInclude Include="include\damage_info.h" />
+    <ClInclude Include="include\events\normal_talent_event.h" />
+    <ClInclude Include="include\events\burst_talent_event.h" />
+    <ClInclude Include="include\events\charged_talent_event.h" />
+    <ClInclude Include="include\events\skill_talent_event.h" />
+    <ClInclude Include="include\read_data.h" />
+    <ClInclude Include="include\stat_components\linear_refine_stat_modifier.h" />
+    <ClInclude Include="include\talent_data.h" />
+    <ClInclude Include="include\stat_components\weapon_secondary_stat_component.h" />
+    <ClInclude Include="include\combo_list.h" />
+    <ClInclude Include="include\component.h" />
+    <ClInclude Include="include\events\damage_event.h" />
+    <ClInclude Include="include\events\abstract_event.h" />
+    <ClInclude Include="include\features\static_feature.h" />
+    <ClInclude Include="include\player.h" />
+    <ClInclude Include="include\rapidcsv.h" />
+    <ClInclude Include="include\stat_components\character_base_stat_component.h" />
+    <ClInclude Include="include\sim.h" />
+    <ClInclude Include="include\stat_components\stat_component.h" />
+    <ClInclude Include="include\stat_components\stat_modifier.h" />
+    <ClInclude Include="include\events\talent_event.h" />
+    <ClInclude Include="include\talent_scaling.h" />
+    <ClInclude Include="include\team.h" />
+    <ClInclude Include="include\weapon.h" />
+    <ClInclude Include="include\stat_components\weapon_base_atk_stat_component.h" />
+    <ClInclude Include="include\weapons\swords\freedom_sworn.h" />
+    <ClInclude Include="include\weapons\swords\skyward_blade.h" />
+    <ClInclude Include="include\weapons\swords\mistsplitter.h" />
+    <ClInclude Include="include\weapons\weapon_dict.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

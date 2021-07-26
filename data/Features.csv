@@ -1,0 +1,20 @@
+feature_name,character,constellation,weapon,artifact,type,subtype,static_modifiers,temporary,share,timing,condition,duration,field,max stacks
+Albedo E Cast,Albedo,0,,,Dynamic,,,,FALSE,postcast,skill,,TRUE,0
+Albedo E Trigger,Albedo,0,,,Dynamic,,,TRUE,FALSE,on_hit,any,30,FALSE,0
+Albedo A2,Albedo,0,,,Static,,skill_dmg:0.125,,FALSE,,,,,
+Albedo A4,Albedo,0,,,Dynamic,,ele_m:125,,TRUE,postcast,burst,10,TRUE,0
+Albedo C1,Albedo,1,,,Dynamic,,,,FALSE,on_hit,transient blossom,,,
+Albedo C2,Albedo,2,,,Dynamic,,,,FALSE,on_hit,transient blossom,,TRUE,0
+Albedo C3,Albedo,3,,,Static,,skill_level:3,,FALSE,,,,,
+Albedo C4,Albedo,4,,,Dynamic,,plunge_dmg:0.3,,TRUE,postcast,skill,30,TRUE,0
+Albedo C5,Albedo,5,,,Static,,burst_level:3,,FALSE,,,,,
+Albedo C6,Albedo,6,,,Dynamic,,all_dmg:0.17,,TRUE,reaction,crystallise,15,TRUE,0
+,,,,,,,,,,,,,,
+Mistsplitter R,,,Mistsplitter Reforged,,Static,,ele_dmg:0.12,,FALSE,,,,,
+Mistsplitter NT,,,Mistsplitter Reforged,,Dynamic,,,,FALSE,pre_hit,normal,,TRUE,0
+Mistsplitter BT,,,Mistsplitter Reforged,,Dynamic,,,,FALSE,precast,burst,,TRUE,0
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+Skyward Blade Static,,,Skyward Blade,,Static,,crit_rate:0.04,,FALSE,,,,TRUE,
+Skyward Blade Dynamic Buff,,,Skyward Blade,,Dynamic,,normal_atk_speed:0.1,,FALSE,postcast,burst,12,TRUE,
+Skyward Blade Dynamic Temp On-Hit,,,Skyward Blade,,Dynamic,,,TRUE,FALSE,on_hit,normal,12,TRUE,

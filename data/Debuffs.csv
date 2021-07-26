@@ -1,0 +1,45 @@
+Debuff,Character,Weapon,Artifact,Rank,Constellation,method,Duration,Type2,Trigger
+,,,,,,,,,
+Beidou_C6,Beidou,,,,6,beidou_c6,15,
+,burst
+,,,,,,,,,
+Chongyun_A4,Chongyun,,,,0,chongyun_a4,8,on_hit,skill
+,,,,,,,,,
+Jean_C4,Jean,,,,4,jean_c4,10,on_hit,burst
+,,,,,,,,,
+Klee_C2,Klee,,,,2,klee_c2,10,on_hit,skill
+,,,,,,,,,
+Lisa_A4,Lisa,,,,0,lisa_a4,25,on_hit,burst
+,,,,,,,,,
+Razor_C4,Razor,,,,4,razor_c4,7,on_hit,skill
+,,,,,,,,,
+Traveler_Anemo_C6_anemo,Traveler (Anemo),,,,6,traveler_anemo_anemo,10,,
+Traveler_Anemo_C6_hydro,Traveler (Anemo),,,,6,traveler_anemo_hydro,10,,
+Traveler_Anemo_C6_pyro,Traveler (Anemo),,,,6,traveler_anemo_pyro,10,,
+Traveler_Anemo_C6_electro,Traveler (Anemo),,,,6,traveler_anemo_electro,10,,
+Traveler_Anemo_C6_cryo,Traveler (Anemo),,,,6,traveler_anemo_cryo,10,,
+,,,,,,,,,
+,,,,,,,,,
+Venti_C2_1,Venti,,,,2,venti_c2_1,10,on_hit,skill
+Venti_C2_2,,,,,,venti_c2_2,5,on_hit,skill
+Venti_C6_Anemo,Traveler (Anemo),,,,6,venti_anemo,10,,
+Venti_C6_Hydro,Traveler (Anemo),,,,6,venti_hydro,10,,
+Venti_C6_Pyro,Traveler (Anemo),,,,6,venti_pyro,10,,
+Venti_C6_Electro,Traveler (Anemo),,,,6,venti_electro,10,,
+Venti_C6_Cryo,Traveler (Anemo),,,,6,venti_cryo,10,,
+,,,,,,,,,
+Xiangling_C1,Xiangling,,,,1,xiangling_c1,15,on_hit,skill
+,,,,,,,,,
+Xingqiu_C2,Xingqiu,,,,1,xingqiu_c2,20,on_hit,burst
+,,,,,,,,,
+Xinyan_C4,Xinyan,,,,4,xinyan_c4,12,on_hit,skill
+,,,,,,,,,
+VV_Cryo,,,,,,vv_cryo,10,,
+VV_Electro,,,,,,vv_electro,10,,
+VV_Hydro,,,,,,vv_hydro,10,,
+VV_Pyro,,,,,,vv_pyro,10,,
+,,,,,,,,,
+Omen_debuff,,,,,,omen_debuff,5,,
+Riptide_debuff,,,,,,riptide_debuff,18,,
+,,,,,,,,,
+Geo_Resonance,,,,,,geo_resonance_debuff,15,,

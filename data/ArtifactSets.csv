@@ -1,0 +1,27 @@
+artifact,pieces,artifact_rarity,pct_atk,crit_rate,physical_dmg,anemo_dmg,cryo_dmg,electro_dmg,geo_dmg,hydro_dmg,pyro_dmg,ele_m,recharge,normal_dmg,charged_dmg,burst_dmg,img_source
+Gladiator's Finale 2,2,5*,18%,,,,,,,,,,,35%,,,../images/artifacts/Gladiator's_Finale_2.png
+Gladiator's Finale 4,4,5*,18%,,,,,,,,,,,35%,,,../images/artifacts/Gladiator's_Finale_4.png
+Wanderer's Troupe 2,2,5*,,,,,,,,,,80,,,,,../images/artifacts/Wanderer's_Troupe_2.png
+Wanderer's Troupe 4,4,5*,,,,,,,,,,80,,,35%,,../images/artifacts/Wanderer's_Troupe_4.png
+Bloodstained Chivalry 2,2,5*,,,25%,,,,,,,,,,50%,,../images/artifacts/Bloodstained_Chivalry_2.png
+Bloodstained Chivalry 4,4,5*,,,25%,,,,,,,,,,50%,,../images/artifacts/Bloodstained_Chivalry_4.png
+Noblesse Oblige 2,2,5*,,,,,,,,,,,,,,20%,../images/artifacts/Noblesse_Oblige_2.png
+Noblesse Oblige 4,4,5*,,,,,,,,,,,,,,20%,../images/artifacts/Noblesse_Oblige_4.png
+Berserker 2,2,4*,,36%,,,,,,,,,,,,,../images/artifacts/Berserker_2.png
+Berserker 4,4,4*,,36%,,,,,,,,,,,,,../images/artifacts/Berserker_4.png
+Viridescent Venerer 2,2,5*,,,,15%,,,,,,,,,,,../images/artifacts/Viridescent_Venerer_2.png
+Viridescent Venerer 4,4,5*,,,,15%,,,,,,,,,,,../images/artifacts/Viridescent_Venerer_4.png
+Lavawalker 2,2,5*,,,,,,,,,,,,,,,../images/artifacts/Lavawalker_2.png
+Lavawalker 4,2,5*,,,,,,,,,,,,,,,../images/artifacts/Lavawalker_4.png
+Crimson Witch 2,2,5*,,,,,,,,,,,,,,,../images/artifacts/Crimson_Witch_2.png
+Crimson Witch 4,2,5*,,,,,,,,,,,,,,,../images/artifacts/Crimson_Witch_4.png
+Thundering Fury 2,2,5*,,,,,,15%,,,,,,,,,../images/artifacts/Thundering_Fury_2.png
+Thundering Fury 4,2,5*,,,,,,15%,,,,,,,,,../images/artifacts/Thundering_Fury_4.png
+Thundersoother 2,2,5*,,,,,,,,,,,,,,,../images/artifacts/Thundersoother_2.png
+Thundersoother 4,2,5*,,,,,,,,,,,,,,,../images/artifacts/Thundersoother_4.png
+Archaic Petra 2,2,5*,,,,,,,15%,,,,,,,,../images/artifacts/Archaic_Petra_2.png
+Archaic Petra 4,2,5*,,,,,,,15%,,,,,,,,../images/artifacts/Archaic_Petra_4.png
+Heart of Depth 2,2,5*,,,,,,,,15%,,,,,,,../images/artifacts/Heart_of_Depth_2.png
+Heart of Depth 4,2,5*,,,,,,,,15%,,,,,,,../images/artifacts/Heart_of_Depth_4.png
+Blizzard Strayer 2,2,5*,,,,,15%,,,,,,,,,,../images/artifacts/Blizzard_Strayer_2.png
+Blizzard Strayer 4,2,5*,,,,,15%,,,,,,,,,,../images/artifacts/Blizzard_Strayer_4.png
