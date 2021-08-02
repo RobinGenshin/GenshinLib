@@ -38,6 +38,7 @@ float DamageCalculation::StandardHelper(DamageEvent& dE, Sim& sim, int tick, Dam
 			player.get_stat(Stat::ALL_DMG) +
 			player.get_stat(Stat::CONDITIONAL_ALL_DMG) + 
 			player.get_stat(EnumMap::get_stat_index(EnumMap::get_string_element(dE.data.element) + "_dmg"));
+		if (dE.data.hasTravelTime) dmgBonus += player.get_stat(Stat::TRAVEL_TIME_DMG) * dE.data.travelTime;
 
 		if (dE.data.talent_type != Talent::null) dmgBonus += player.get_stat(EnumMap::get_stat_index(EnumMap::get_string_talent(dE.data.talent_type) + "_dmg"));
 	}

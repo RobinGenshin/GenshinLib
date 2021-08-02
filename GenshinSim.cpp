@@ -4,6 +4,7 @@
 #include <iostream>
 #include "sim.h"
 #include "enum_maps.h"
+#include "weapon_dict.h"
 
 int main()
 {
@@ -11,11 +12,9 @@ int main()
     Team t;
     std::cout << "Constructed team..\n";
     t.EquipComponentToPlayer(0, Player::ComponentsInd::CHARACTER, "Albedo");
-    t.players.at(0).get()->skill_level = 10;
     t.players.at(0).get()->set_mainstat(Player::ArtifactPiece::FLOWER, Stat::FLAT_HP);
     t.players.at(0).get()->set_mainstat(Player::ArtifactPiece::GOBLET, Stat::GEO_DMG);
     t.players.at(0).get()->set_substat_amount(Stat::PCT_DEF, 0);
-    t.EquipComponentToPlayer(0, Player::ComponentsInd::WEAPON, "Skyward Blade");
 
     Enemy e;
     e.EquipMonster("Cryowhopper");
@@ -24,7 +23,13 @@ int main()
     std::cout << "Constructed sim instance.\n";
     std::cout << sim.players.size() << std::endl;
     std::cout << "Turning on sim..\n";
-    sim.TurnOnSim();
+
+    for (auto& i : WeaponDict::Get().map) {
+        t.EquipComponentToPlayer(0, Player::ComponentsInd::WEAPON, i.first);
+        sim.ResetTeam();
+        sim.TurnOnSim();
+    };
+
     std::cout << "DPS: " << (sim.damage / sim.current_time) << std::endl;
 }
 

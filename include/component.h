@@ -31,7 +31,7 @@ public:
 	std::map<std::string, std::unique_ptr<DamageData>> damage_data;
 
 	virtual float get_stat(Stat);
-
-protected:
-	bool levelChanged = true;
+	virtual float get_shared_stat(Stat);
+	virtual float get_stat_component_stat(Stat);
+	virtual float get_feature_stat(Stat);
 };

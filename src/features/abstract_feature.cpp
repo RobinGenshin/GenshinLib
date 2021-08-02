@@ -4,7 +4,8 @@
 #include "player.h"
 
 
-AbstractFeature::AbstractFeature(Component& _component, const FeatureData _data) : component(_component), data(_data) {};
+AbstractFeature::AbstractFeature(Component& _component, const FeatureData _data) : component(_component), data(_data), isDynamic(false), hasStatModifier(false) {
+};
 
 Player& AbstractFeature::get_player() { return *component.player; };
 

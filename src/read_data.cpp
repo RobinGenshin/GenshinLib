@@ -65,6 +65,8 @@ std::pair<Stat, float> Data::str_to_pair_string_float(std::string pairstr) {
             result.push_back(pairstr.substr(start, end - start));
         }
         //std::cout << pairstr << std::endl;
+        std::cout << result.at(0) << std::endl;
+        std::cout << Data::str_to_float(result.at(1)) << std::endl;
         return std::pair(EnumMap::get_stat_index(result.at(0)), Data::str_to_float(result.at(1)));
     }
 };
@@ -170,6 +172,7 @@ void Data::read_character_data(rapidcsv::Document doc, rapidcsv::Document doc2) 
             td.time_to_attack = str_to_vector_float(doc.GetCell<std::string>(talent + "_attack", c));
             if (talent == "skill" || talent == "burst") td.cd = doc.GetCell<float>(talent + "_cd", c);
             td.scaling = doc.GetCell<std::string>(talent + "_scaling", c);
+            if ((cha.weapon_type == WeaponType::BOW) && (talent == "charged")) td.hasTravelTime = true;
 
             cha.talent_data.emplace(std::make_pair(EnumMap::get_talent_index(talent), std::make_shared<TalentData>(td)));
         };
@@ -273,13 +276,14 @@ void Data::read_feature_data(std::string filePath) {
         feat.artifact = doc.GetCell<std::string>("artifact", c);
         feat.constellation = doc.GetCell<int>("constellation", c);
         feat.condition = str_to_vector_string(doc.GetCell<std::string>("condition", c));
-        //std::cout << std::endl;
-        //for (auto& i : feat.condition) std::cout << i << ", " << (i == "any");
-        //std::cout << std::endl;
         feat.timing = doc.GetCell<std::string>("timing", c);
         feat.temporary = (doc.GetCell<std::string>("temporary", c) == "TRUE");
         feat.share = (doc.GetCell<std::string>("share", c) == "TRUE");
         feat.field = (doc.GetCell<std::string>("field", c) == "TRUE");
+        if (doc.GetCell<std::string>("cd", c) == "") feat.cd = 0;
+        else feat.cd = doc.GetCell<float>("cd", c);
+
+        feat.duration = (doc.GetCell<float>("duration", c));
 
         std::vector<std::string> smvec = str_to_vector_string(doc.GetCell<std::string>("static_modifiers", c));
         if (smvec.size() > 0) for (auto& i : smvec) feat.stat_modifier_data.insert(str_to_pair_string_float(i));

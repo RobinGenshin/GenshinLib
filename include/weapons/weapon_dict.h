@@ -5,6 +5,7 @@
 #include "weapon.h"
 #include "mistsplitter.h"
 #include "skyward_blade.h"
+#include "amenoma_kageuchi.h"
 
 template<typename T> std::unique_ptr<GWeapon> createInstance(Player* player) { return std::make_unique<T>(player); }
 typedef std::map<std::string, std::unique_ptr<GWeapon>(*)(Player* player)> weapon_map_type;

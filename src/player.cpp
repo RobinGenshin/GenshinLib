@@ -1,8 +1,9 @@
 #include "player.h"
 #include "team.h"
 #include "weapon_dict.h"
+#include "sim.h"
 
-Player::Player(Team& _team) : team(_team), substats({}), character_level(90), weapon_level(0), constellation(6), energy(0), skill_cd(0), burst_cd(0), current_skill_charges(0), maximum_skill_charges(0), _stats(), _checked() {
+Player::Player(Team& _team) : team(_team), substats({}), character_level(90), weapon_level(90), constellation(6), energy(0), skill_cd(0), burst_cd(0), current_skill_charges(0), maximum_skill_charges(0) {
 	std::vector<Stat> subs = { Stat::PCT_ATK, Stat::PCT_DEF, Stat::PCT_HP, Stat::ENERGY_RECHARGE, Stat::CRIT_RATE, Stat::CRIT_DMG, Stat::ELEMENTAL_MASTERY };
 	for (auto& i : subs) substats.emplace(std::make_pair(i, std::make_shared<ArtifactSubstatComponent>(i)));
 	artifact = std::make_unique<Artifact>(*this);
@@ -35,7 +36,6 @@ std::map<std::string, DynamicFeature*> Player::get_dynamic_features() {
 
 void Player::set_substat_amount(Stat stat, int a) {
 	substats.at(stat).get()->set_amount(a);
-	ResetComponentChecks();
 };
 
 void Player::set_mainstat(ArtifactPiece piece, Stat stat) {
@@ -44,38 +44,15 @@ void Player::set_mainstat(ArtifactPiece piece, Stat stat) {
 	if (piece == ArtifactPiece::SANDS) sandsMain = stat;
 	if (piece == ArtifactPiece::GOBLET) gobletMain = stat;
 	if (piece == ArtifactPiece::CIRCLET) circletMain = stat;
-	ResetComponentChecks();
 };
 
 float Player::get_stat(Stat statName) {
 
 	float _value = 0;
-	if (_checked.find(statName) == _checked.end() || !_checked.at(statName)) {
-		_value += CalculateComponentStatValue(statName);
-		if (substats.find(statName) != substats.end()) {
-			_value += substats.at(statName).get()->get_value();
-		};
-
-		_stats[statName] = _value;
-		_checked[statName] = true;
-	}
-	else _value += _stats[statName];
-
-	for (auto& i : team.players) {
-		for (auto& j : i.get()->get_components()) {
-			for (auto& k : j->features) {
-				if (!k.second.get()->isDynamic && !k.second.get()->hasStatModifier) {
-					FeatureStatModifierContainer* container = dynamic_cast<FeatureStatModifierContainer*>(k.second.get());
-
-					if ((i.get() == this || k.second.get()->data.share) &&
-						((std::find(container->stats.begin(), container->stats.end(), statName) != container->stats.end()))) {
-						_value += container->get_stat(statName);
-					};
-				}
-			};
-		};
+	_value += CalculateComponentStatValue(statName);
+	if (substats.find(statName) != substats.end()) {
+		_value += substats.at(statName).get()->get_value();
 	};
-
 	return _value;
 };
 
@@ -97,14 +74,12 @@ void Player::EquipComponent(ComponentsInd compType, std::string compName) {
 		}
 		else throw std::runtime_error("");
 	};
-	ResetComponentChecks();
 	std::cout << "Equipped component\n";
 }
 void Player::UnequipComponent(ComponentsInd compType) {
 	if (compType == ComponentsInd::CHARACTER) character = nullptr;
 	if (compType == ComponentsInd::WEAPON) weapon = nullptr;
 	if (compType == ComponentsInd::ARTIFACT) artifact = nullptr;
-	ResetComponentChecks();
 };
 
 bool Player::CheckTalentAvailable(Talent talentName, float stamina) {
@@ -133,16 +108,18 @@ void Player::Reset() {
 	std::cout << "Reset player..\n";
 };
 
-void Player::ResetComponentChecks() {
-	for (auto& i : _checked) i.second = false;
-};
-
 float Player::CalculateComponentStatValue(Stat statName) {
-	float finalValue = 0;
+	float value = 0;
 	for (auto& i : get_components()) {
-		finalValue += i->get_stat(statName);
+		value += i->get_stat(statName);
 	};
-	return finalValue;
+	for (auto& i : team.players) {
+		if (*i.get() == *this) continue;
+		for (auto& k : i.get()->get_components()) {
+			value += k->get_shared_stat(statName);
+		};
+	};
+	return value;
 };
 
 int Player::get_normal_level() {

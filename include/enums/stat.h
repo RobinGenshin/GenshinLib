@@ -64,4 +64,6 @@ enum class Stat {
 	MELT_DMG,
 
 	NORMAL_ATK_SPEED,
+
+	TRAVEL_TIME_DMG,
 };

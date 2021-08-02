@@ -1,5 +1,6 @@
 #include "temporary_decorator.h"
 #include "feature_data.h"
+#include <iostream>
 
 template <class T>
 void TemporaryDecorator<T>::CheckEvent(Sim& sim, AbstractEvent& event, std::string timing) {

@@ -18,6 +18,7 @@ public:
 	std::vector<float> times;
 	int units;
 	std::map<DamageScalingStat, std::vector<float>> damage;
-
+	bool hasTravelTime = false;
+	float travelTime = 0.1f;
 	virtual ~DamageData();;
 };

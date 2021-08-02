@@ -13,16 +13,28 @@ Albedo::Albedo(Player* p) : GCharacter(p, Data::Get().get_char_dict().at("Albedo
 		return std::make_shared<Burst>(p);
 		};
 
-	features.emplace("Albedo A2", std::make_unique<A2>(*this));
+	features.emplace("Albedo A2", std::make_unique<StaticFeature<StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Albedo A2")));
+
+	features.emplace("Albedo A4", std::make_unique<StatModifierDecorator<DynamicFeature, StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Albedo A4")));
+
+	features.emplace("Albedo C3", std::make_unique<StaticFeature<StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Albedo C3")));
+
+	features.emplace("Albedo C4", std::make_unique<StaticFeature<StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Albedo C4")));
+
+	features.emplace("Albedo C5", std::make_unique<StaticFeature<StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Albedo C5")));
+
+	features.emplace("Albedo C6", std::make_unique<StatModifierDecorator<DynamicFeature, StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Albedo C6")));
+
 	features.emplace("Albedo E Cast", std::make_unique<SkillCast>(*this));
 	features.emplace("Albedo E Trigger", std::make_unique<SkillTrigger>(*this));
-	features.emplace("Albedo A4", std::make_unique<A4>(*this));
 	features.emplace("Albedo C1", std::make_unique<C1>(*this));
 	features.emplace("Albedo C2", std::make_unique<C2>(*this));
-	features.emplace("Albedo C3", std::make_unique<C3>(*this));
-	features.emplace("Albedo C4", std::make_unique<C4>(*this));
-	features.emplace("Albedo C5", std::make_unique<C5>(*this));
-	features.emplace("Albedo C6", std::make_unique<C6>(*this));
 };
 
 Albedo::Burst::Burst(Player& p) : BurstTalentEvent(p), c2_stacks(0) {
@@ -80,10 +92,6 @@ void Albedo::SkillTrigger::Activate(Sim& sim) {
 	cd = 2;
 };
 
-Albedo::A2::A2(Albedo& albedo) : StaticFeature<>(albedo, Data::Get().get_feature_dict().at("Albedo A2")) {};
-
-Albedo::A4::A4(Albedo& albedo) : StatModifierDecorator<DynamicFeature>(albedo, Data::Get().get_feature_dict().at("Albedo A4")) {};
-
 Albedo::C1::C1(Albedo& albedo) : DynamicFeature(albedo, Data::Get().get_feature_dict().at("Albedo C1")) {};
 void Albedo::C1::Activate(Sim& sim) {
 	dynamic_cast<Player*>(component.player)->energy += 1.2;
@@ -93,11 +101,3 @@ Albedo::C2::C2(Albedo& albedo) : DynamicFeature(albedo, Data::Get().get_feature_
 void Albedo::C2::Activate(Sim& sim) {
 	dynamic_cast<Albedo&>(component).c2_stacks = std::min(7, dynamic_cast<Albedo&>(component).c2_stacks+1);
 };
-
-Albedo::C3::C3(Albedo& albedo) : StaticFeature<>(albedo, Data::Get().get_feature_dict().at("Albedo C3")) {};
-
-Albedo::C4::C4(Albedo& albedo) : StatModifierDecorator<DynamicFeature>(albedo, Data::Get().get_feature_dict().at("Albedo C4")) {};
-
-Albedo::C5::C5(Albedo& albedo) : StaticFeature<>(albedo, Data::Get().get_feature_dict().at("Albedo C5")) {};
-
-Albedo::C6::C6(Albedo& albedo) : StatModifierDecorator<DynamicFeature>(albedo, Data::Get().get_feature_dict().at("Albedo C6")) {};

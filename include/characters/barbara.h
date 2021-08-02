@@ -1,8 +1,5 @@
 #pragma once
 #include "read_data.h"
-#include "static_feature.h"
-#include "dynamic_buff_feature.h"
-#include "dynamic_temp_feature.h"
 #include "damage_data.h"
 #include "skill_talent_event.h"
 

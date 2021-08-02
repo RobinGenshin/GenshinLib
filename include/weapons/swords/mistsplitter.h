@@ -9,25 +9,6 @@ class Mistsplitter : public GWeapon {
 public:
 	Mistsplitter(Player* p);
 
-	class EleBonus : public StatModifierDecorator<DynamicFeature,LinearRefineStatModifier> {
-	public:
-		EleBonus(Mistsplitter& ms);
-	};
-
-	class NormalTrigger : public DynamicFeature {
-	public:
-		NormalTrigger(Mistsplitter& ms);
-		virtual void Activate(Sim& sim) override;
-		float normal_timer;
-	};
-
-	class BurstTrigger : public DynamicFeature {
-	public:
-		BurstTrigger(Mistsplitter& ms);
-		virtual void Activate(Sim& sim) override;
-		float burst_timer;
-	};
-
 	class MistsplitterStatComponent : public StatComponent {
 	public:
 		MistsplitterStatComponent(Mistsplitter& ms);

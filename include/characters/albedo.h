@@ -45,16 +45,6 @@ public:
 		virtual void Activate(Sim& sim) override;
 	};
 
-	class A2 : public StaticFeature<> {
-	public:
-		A2(Albedo& albedo);
-	};
-
-	class A4 : public StatModifierDecorator<DynamicFeature> {
-	public:
-		A4(Albedo& albedo);
-	};
-
 	class C1 : public DynamicFeature {
 	public:
 		C1(Albedo& albedo);
@@ -65,26 +55,6 @@ public:
 	public:
 		C2(Albedo& albedo);
 		virtual void Activate(Sim& sim) override;
-	};
-
-	class C3 : public StaticFeature<> {
-	public:
-		C3(Albedo& albedo);
-	};
-
-	class C4 : public StatModifierDecorator<DynamicFeature> {
-	public:
-		C4(Albedo& albedo);
-	};
-
-	class C5 : public StaticFeature<> {
-	public:
-		C5(Albedo& albedo);
-	};
-
-	class C6 : public StatModifierDecorator<DynamicFeature> {
-	public:
-		C6(Albedo& albedo);
 	};
 
 private:

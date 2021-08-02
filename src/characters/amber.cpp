@@ -1,5 +1,8 @@
 #include "amber.h"
 #include "sim.h"
+#include "static_feature.h"
+#include <memory>
+#include "stat_component.h"
 
 
 TalentData& Amber::get_talent_data(Talent talentName) {
@@ -13,13 +16,25 @@ Amber::Amber(Player* p) : GCharacter(p, Data::Get().get_char_dict().at("Amber"))
 		return std::make_shared<Skill>(p);
 	};
 
-	features.emplace("Amber A2", std::make_unique<A2>(*this));
-	features.emplace("Amber A4", std::make_unique<A4>(*this));
+	features.emplace("Amber A2", std::make_unique<StaticFeature<StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Amber A2")));
+
+	features.emplace("Amber A4", std::make_unique<StatModifierDecorator<DynamicFeature, StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Amber A4")));
+
+	features.emplace("Amber C3", std::make_unique<StaticFeature<StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Amber C3")));
+
+	features.emplace("Amber C4", std::make_unique<StaticFeature<StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Amber C4")));
+
+	features.emplace("Amber C5", std::make_unique<StaticFeature<StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Amber C5")));
+
+	features.emplace("Amber C6", std::make_unique<StatModifierDecorator<DynamicFeature, StatModifier>>
+		(*this, Data::Get().get_feature_dict().at("Amber C6")));
+
 	features.emplace("Amber C2", std::make_unique<C2>(*this));
-	features.emplace("Amber C3", std::make_unique<C3>(*this));
-	features.emplace("Amber C4", std::make_unique<C4>(*this));
-	features.emplace("Amber C5", std::make_unique<C5>(*this));
-	features.emplace("Amber C6", std::make_unique<C6>(*this));
 };
 
 Amber::Skill::Skill(Player& p) : SkillTalentEvent(p), detonated(false) {};
@@ -52,11 +67,6 @@ float Amber::Skill::get_ratio(DamageScalingStat statType, int tick) {
 	return r;
 };
 
-
-Amber::A2::A2(Amber& amber) : StaticFeature<>(amber, Data::Get().get_feature_dict().at("Amber A2")) {};
-
-Amber::A4::A4(Amber& amber) : StatModifierDecorator<DynamicFeature>(amber, Data::Get().get_feature_dict().at("Amber A4")) {};
-
 Amber::C1::C1(Amber& amber) : TalentData(*amber.talent_data.at(Talent::CHARGED).get()) {
 	ticks = 2;
 	times.push_back(times.at(0));
@@ -69,11 +79,3 @@ void Amber::C2::Activate(Sim& sim) {
 		if (!i->detonated) i->Detonate(sim);
 	};
 };
-
-Amber::C3::C3(Amber& amber) : StaticFeature<>(amber, Data::Get().get_feature_dict().at("Amber C3")) {};
-
-Amber::C4::C4(Amber& amber) : StaticFeature<>(amber, Data::Get().get_feature_dict().at("Amber C4")) {};
-
-Amber::C5::C5(Amber& amber) : StaticFeature<>(amber, Data::Get().get_feature_dict().at("Amber C5")) {};
-
-Amber::C6::C6(Amber& amber) : StatModifierDecorator<DynamicFeature>(amber, Data::Get().get_feature_dict().at("Amber C6")) {};

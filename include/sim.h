@@ -20,7 +20,7 @@ public:
 	int talent_count = 0;
 
 	float current_time = 0;
-	float run_time = 30;
+	float run_time = 1000;
 	float turnEndTime();
 	float damage = 0;
 

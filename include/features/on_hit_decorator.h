@@ -14,9 +14,13 @@ public:
     //static_assert(std::is_base_of<DamageEvent, D)::value, "Invalid template argument");
 
     std::string key;
+    float ratio_inc = 0.25f;
 
     template < typename...  Args>
     OnHitDecorator(const std::string& c, Args &&... args) : key(c), T(std::forward<Args>(args)...) { };
+
+    template < typename...  Args>
+    OnHitDecorator(const std::string& c, float f, Args &&... args) : key(c), ratio_inc(f), T(std::forward<Args>(args)...) { };
 
     virtual void Activate(Sim& sim) override;
 };

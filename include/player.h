@@ -6,6 +6,7 @@
 #include "dynamic_feature.h"
 
 class Team;
+class Sim;
 
 class Player {
 public:
@@ -33,6 +34,7 @@ public:
 	Player(Team& _team);
 
 	Team& team;
+	Sim* sim;
 
 	std::shared_ptr<GCharacter> character = nullptr;
 	std::shared_ptr<GWeapon> weapon = nullptr;
@@ -52,16 +54,16 @@ public:
 	void EquipComponent(ComponentsInd compType, std::string compName);
 	void UnequipComponent(ComponentsInd compType);
 
-	int normal_level = 1;
+	int normal_level = 10;
 	int get_normal_level();
-	int skill_level = 1;
+	int skill_level = 10;
 	int get_skill_level();
 	int burst_level = 10;
 	int get_burst_level();
-	int character_level;
-	int weapon_level;
-	int constellation;
-	int refinement;
+	int character_level = 90;
+	int weapon_level = 90;
+	int constellation = 6;
+	int refinement = 5;
 	Stat flowerMain = Stat::NONE;
 	Stat plumeMain = Stat::NONE;
 	Stat sandsMain = Stat::NONE;
@@ -73,6 +75,8 @@ public:
 	int current_skill_charges;
 	int maximum_skill_charges;
 
+	bool isShielded;
+
 	bool CheckTalentAvailable(Talent talentName, float stamina);
 
 	std::shared_ptr<TalentEvent> CreateTalentEvent(Talent talentName, int ticks = -1);
@@ -80,12 +84,7 @@ public:
 
 	void Reset();
 
-	void ResetComponentChecks();
-
 private:
 
 	float CalculateComponentStatValue(Stat stat);
-
-	std::map<Stat, float> _stats;
-	std::map<Stat, bool> _checked;
 };

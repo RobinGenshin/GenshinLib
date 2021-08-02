@@ -14,6 +14,7 @@ bool DynamicFeature::FieldCheck(Sim& sim, AbstractEvent& event) {
 
 
 void DynamicFeature::CheckEvent(Sim& sim, AbstractEvent& event, std::string timing) {
+
 	if (!enabled()) return;
 	if (cd > 0) return;
 	if (!FieldCheck(sim, event)) return;

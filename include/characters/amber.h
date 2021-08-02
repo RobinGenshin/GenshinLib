@@ -26,16 +26,6 @@ public:
 		void ProcessEvent(Sim& sim) override;
 	};
 
-	class A2 : public StaticFeature<> {
-	public:
-		A2(Amber& amber);
-	};
-
-	class A4 : public StatModifierDecorator<DynamicFeature> {
-	public:
-		A4(Amber& amber);
-	};
-
 	class C1 : public TalentData {
 	public:
 		C1(Amber& amber);
@@ -48,26 +38,6 @@ public:
 		C2(Amber& amber);
 		virtual void Activate(Sim& sim) override;
 		std::vector<Amber::Skill*> skills;
-	};
-
-	class C3 : public StaticFeature<> {
-	public:
-		C3(Amber& amber);
-	};
-
-	class C4 : public StaticFeature<> {
-	public:
-		C4(Amber& amber);
-	};
-
-	class C5 : public StaticFeature<StatModifier> {
-	public:
-		C5(Amber& amber);
-	};
-
-	class C6 : public StatModifierDecorator<DynamicFeature, StatModifier> {
-	public:
-		C6(Amber& amber);
 	};
 
 private:
